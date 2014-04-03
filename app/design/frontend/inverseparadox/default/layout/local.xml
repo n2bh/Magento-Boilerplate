@@ -8,12 +8,8 @@
             <action method="removeItem"><type>skin_css</type><name>css/styles-ie.css</name></action>
             <action method="removeItem"><type>skin_css</type><name>css/widgets.css</name></action>
             <action method="removeItem"><type>skin_css</type><name>css/print.css</name></action>
-            <action method="addCss"><stylesheet>css/interior-pages.css</stylesheet></action>
             <action method="addCss"><stylesheet>css/global.css</stylesheet></action>
-            <action method="addCss"><stylesheet>css/magnific.css</stylesheet></action>
-            <action method="addItem"><type>skin_js</type><name>js/jquery.1.10.2.min.js</name></action>
-            <action method="addItem"><type>skin_js</type><name>js/jquery.magnific.min.js</name></action>
-            <action method="addItem"><type>skin_js</type><name>js/inverseparadox.js</name></action>
+            <action method="addItem"><type>skin_js</type><script>js/theme.js</script></action>
         </reference>
 
         <reference name="root">
@@ -21,22 +17,14 @@
         </reference>
 
         <reference name="left">
-            <remove name="left.permanent.callout" />
+            <!--<remove name="left.permanent.callout" />-->
         </reference>
 
         <reference name="right">
-            <remove name="catalog.compare.sidebar" />
+            <!--<remove name="catalog.compare.sidebar" />-->
         </reference>
 
     </default>
-
-    <!-- Switch Stylesheets -->
-    <cms_index_index>
-        <reference name="head">
-            <action method="removeItem"><type>skin_css</type><name>css/interior-pages.css</name></action>
-            <action method="addCss"><stylesheet>css/home.css</stylesheet></action>
-        </reference>
-    </cms_index_index>
 
     <!-- Category default layout -->
     <catalog_category_default>
@@ -45,18 +33,6 @@
         </reference>
         <reference name="product_list_toolbar">
             <action method="setTemplate"><template>catalog/product/list/toolbar-top.phtml</template></action>
-            <action method="setDefaultListPerPage"><limit>10</limit></action>
-            <action method="addPagerLimit"><mode>list</mode><limit>10</limit></action>
-            <action method="addPagerLimit"><mode>list</mode><limit>20</limit></action>
-            <action method="addPagerLimit"><mode>list</mode><limit>40</limit></action>
-            <action method="addPagerLimit"><mode>list</mode><limit>100</limit></action>
-            <action method="addPagerLimit" translate="label"><mode>list</mode><limit>all</limit><label>All</label></action>
-            <action method="setDefaultGridPerPage"><limit>12</limit></action>
-            <action method="addPagerLimit"><mode>grid</mode><limit>12</limit></action>
-            <action method="addPagerLimit"><mode>grid</mode><limit>24</limit></action>
-            <action method="addPagerLimit"><mode>grid</mode><limit>48</limit></action>
-            <action method="addPagerLimit"><mode>grid</mode><limit>100</limit></action>
-            <action method="addPagerLimit" translate="label"><mode>grid</mode><limit>all</limit><label>All</label></action>
         </reference>
     </catalog_category_default>
 
@@ -67,18 +43,6 @@
         </reference>
         <reference name="product_list_toolbar">
             <action method="setTemplate"><template>catalog/product/list/toolbar-top.phtml</template></action>
-            <action method="setDefaultListPerPage"><limit>10</limit></action>
-            <action method="addPagerLimit"><mode>list</mode><limit>10</limit></action>
-            <action method="addPagerLimit"><mode>list</mode><limit>20</limit></action>
-            <action method="addPagerLimit"><mode>list</mode><limit>40</limit></action>
-            <action method="addPagerLimit"><mode>list</mode><limit>100</limit></action>
-            <action method="addPagerLimit" translate="label"><mode>list</mode><limit>all</limit><label>All</label></action>
-            <action method="setDefaultGridPerPage"><limit>12</limit></action>
-            <action method="addPagerLimit"><mode>grid</mode><limit>12</limit></action>
-            <action method="addPagerLimit"><mode>grid</mode><limit>24</limit></action>
-            <action method="addPagerLimit"><mode>grid</mode><limit>48</limit></action>
-            <action method="addPagerLimit"><mode>grid</mode><limit>100</limit></action>
-            <action method="addPagerLimit" translate="label"><mode>grid</mode><limit>all</limit><label>All</label></action>
         </reference>
     </catalog_category_layered>
 
@@ -120,18 +84,6 @@
         </reference>
         <reference name="product_list_toolbar">
             <action method="setTemplate"><template>catalog/product/list/toolbar-top.phtml</template></action>
-            <action method="setDefaultListPerPage"><limit>10</limit></action>
-            <action method="addPagerLimit"><mode>list</mode><limit>10</limit></action>
-            <action method="addPagerLimit"><mode>list</mode><limit>20</limit></action>
-            <action method="addPagerLimit"><mode>list</mode><limit>40</limit></action>
-            <action method="addPagerLimit"><mode>list</mode><limit>100</limit></action>
-            <action method="addPagerLimit" translate="label"><mode>list</mode><limit>all</limit><label>All</label></action>
-            <action method="setDefaultGridPerPage"><limit>12</limit></action>
-            <action method="addPagerLimit"><mode>grid</mode><limit>12</limit></action>
-            <action method="addPagerLimit"><mode>grid</mode><limit>24</limit></action>
-            <action method="addPagerLimit"><mode>grid</mode><limit>48</limit></action>
-            <action method="addPagerLimit"><mode>grid</mode><limit>100</limit></action>
-            <action method="addPagerLimit" translate="label"><mode>grid</mode><limit>all</limit><label>All</label></action>
         </reference>
     </catalogsearch_result_index>
 
@@ -153,10 +105,10 @@
     <checkout_onepage_index translate="label">
         <reference name="checkout.onepage">
 
-            <action method="unsetChild"><alias>billing</alias></action>
-            <action method="unsetChild"><alias>shipping</alias></action>
+            <!--<action method="unsetChild"><alias>billing</alias></action>
+            <action method="unsetChild"><alias>shipping</alias></action>-->
 
-            <block type="ipboilerplate/checkout_onepage_address" name="checkout.onepage.address" as="address" template="checkout/onepage/address.phtml"/>
+            <!--<block type="ipboilerplate/checkout_onepage_address" name="checkout.onepage.address" as="address" template="checkout/onepage/address.phtml"/>-->
 
         </reference>
 

@@ -37,7 +37,7 @@
     <ul id="crosssell-products-list" class="products-grid">
     <?php $i = 0; foreach ($this->getItems() as $_item): ?>
         <?php $i++; ?>
-        <li class="item <?php echo $this->helper('ipboilerplate')->getColumnClasses($i); ?>">
+        <li class="item  <?php echo $i % 2 ? 'odd' : 'even'; ?>">
             <div class="product-wrapper">
                 <a class="product-image" href="<?php echo $_item->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_item->getName()) ?>"><img src="<?php echo $this->helper('catalog/image')->init($_item, 'small_image')->resize(180); ?>" width="180" height="180" alt="<?php echo $this->htmlEscape($_item->getName()) ?>" /></a>
                 <h3 class="product-name"><a href="<?php echo $_item->getProductUrl() ?>"><?php echo $this->htmlEscape($_item->getName()) ?></a></h3>

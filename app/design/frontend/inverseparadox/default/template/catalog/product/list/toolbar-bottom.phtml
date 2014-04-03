@@ -31,10 +31,10 @@
  * @see Mage_Catalog_Block_Product_List_Toolbar
  */
 ?>
-<?php if($this->getCollection()->getSize()): ?>
+<?php if($this->getCollection()->getSize() && $pager = trim($this->getPagerHtml())): ?>
 <div class="toolbar">
     <div class="pager">
-        <?php echo $this->getPagerHtml() ?>
+        <?php echo $pager ?>
     </div>
 </div>
 <?php endif ?>
