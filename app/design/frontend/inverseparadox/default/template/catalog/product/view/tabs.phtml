@@ -1,0 +1,32 @@
+<?php
+/**
+ * @var $this Mage_Core_Block_Template
+ * @parent Mage_Catalog_Block_Product_View
+ */
+?>
+<?php $tabs = $this->getChildGroup('detailed_info', 'getChildHtml');?>
+<ul class="tab-list">
+    <?php $i = 0; foreach ($tabs as $alias => $html): ?>
+        <li class="tab-collateral <?php echo $alias ?>">
+            <a onclick="switchTabContent(this, 'box-<?php echo $alias ?>');" <?php if (!$i++) echo 'class="active"'; ?>><?php echo $this->getChildData($alias, 'title') ?></a>
+        </li>
+    <?php endforeach; ?>
+</ul>
+
+<?php $i = 0; foreach ($tabs as $alias => $html): ?>
+    <div class="box-collateral box-<?php echo $alias ?><?php if (!$i++) echo ' active'; ?>" id="box-<?php echo $alias ?>">
+        <?php echo $html ?>
+    </div>
+<?php endforeach; ?>
+<script>
+    var switchTabContent = function(active, tab) {
+        $$('.tab-collateral').each(function(elem){
+            elem.select('a')[0].removeClassName('active');
+        });
+        $$('.box-collateral').each(function(elem){
+            elem.removeClassName('active');
+        });
+        active.addClassName('active');
+        $(tab).addClassName('active');
+    };
+</script>
